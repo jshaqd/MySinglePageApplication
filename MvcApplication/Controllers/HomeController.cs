@@ -34,5 +34,10 @@ namespace MvcApplication.Controllers
         {
             return View();
         }
+
+        public ActionResult Alumnus()
+        {
+            return View();
+        }
     }
 }
