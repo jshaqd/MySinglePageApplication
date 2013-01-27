@@ -3,32 +3,137 @@
     Layout = "~/Views/Shared/_master.cshtml";
 }
 
-<div class="row-fluid">
-    <div class="span2">
-        <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-                <li class="nav-header">Frontend</li>
-                <li class="active"><a href="#">HTML 4.01</a></li>
-                <li><a href="#">HTML5</a></li>
-                <li><a href="#">CSS</a></li>
-                <li><a href="#">JavaScript</a></li>
-                <li><a href="#">Twitter Bootstrap</a></li>
-                <li><a href="#">Firebug</a></li>
-                <li class="nav-header">Backend</li>
-                <li><a href="#">PHP</a></li>
-                <li><a href="#">SQL</a></li>
-                <li><a href="#">MySQL</a></li>
-                <li><a href="#">PostgreSQL</a></li>
-                <li><a href="#">MongoDB</a></li>
-            </ul>
-        </div>
-        <!--/.well -->
+
+
+<div class="row">
+    <div id ="sideBarScrollSpy" class="span2 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav" >
+            <li><a href="#basic"><i class="icon-chevron-right"></i>基本特点</a></li>
+            <li><a href="#requirement"><i class="icon-chevron-right"></i>系统配置</a></li>
+            <li><a href="#implement"><i class="icon-chevron-right"></i>功能实现</a></li>
+            <li><a href="#result"><i class="icon-chevron-right"></i>应用效果</a></li>
+            <li><a href="#others"><i class="icon-chevron-right"></i>其他相关系统</a></li>
+            <li><a href="#price"><i class="icon-chevron-right"></i>软件标价</a></li>
+        </ul>
     </div>
     <!--/span-->
-    <div class="span10">
-        <h2>About</h2>
+    <div class="span10" data-spy="scroll" data-target="#sideBarScrollSpy" data-offset="50" class="scrollspy-example">
+        <section id="basic">
+            <h2>产品介绍</h2>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id est quis lorem porttitor posuere ac sit amet enim. Aliquam ut tellus sed mi gravida congue eget vel elit. Cras velit tellus, tincidunt congue iaculis vitae, adipiscing in neque. Nunc sit amet felis quis nulla ornare consectetur. Nulla auctor gravida justo, at vestibulum felis tempus quis. Nullam scelerisque suscipit tellus, egestas commodo metus lobortis tincidunt. Aliquam leo dolor, blandit vestibulum aliquet sed, placerat vitae mauris. Sed odio dolor, placerat vitae laoreet eget, suscipit in velit. Suspendisse mi augue, elementum quis scelerisque id, congue et elit. Phasellus a neque dolor, quis malesuada diam. Proin egestas, nisi sed pulvinar tincidunt, sem sapien faucibus elit, ut malesuada augue neque at leo. Praesent bibendum lectus at risus euismod vestibulum. Aenean turpis orci, hendrerit aliquam venenatis eget, laoreet non libero. Nulla quis nisi quis nulla vulputate sodales nec ut quam.</p>
+            <h3 align="center">《茧丝绸企业信息化管理系统》特点</h3>
+            <p>
+                《茧丝绸企业信息化管理系统》是鑫缘蚕丝绸集团股份有限公司控股企业海安县鑫缘制丝有限责任公司与苏州大学联合开发的为制丝企业编制的通用型软件系统。二○○四年通过鉴定，二○○八年获中国纺织工业协会科学技术进步二等奖。本软件已在江苏、浙江、安徽、四川、广东、广西等二十家著名企业推广应用。
+            本软件是为制丝企业编制的通用型系统，生产企业可根据各自的资源自行设置。
+            </p>
+            <h4>一、基本特点</h4>
+            <ol>
+                <li>数据采集自动化</li>
+                <li>采用企业内部局域网，实现数据共享。</li>
+            </ol>
+        </section>
+        <section id="requirement">
+            <h4>二、系统配置</h4>
+            <p>小规模厂（<=8组自动缫丝机）用一台电脑（3000元）加电子称一台（2000元)+电子天平一台（2000元)即可，但其它部门查询不方便</p>
+            <h5>正常配置：</h5>
+            <ol>
+                <li>服务器一台（3000-5000元</li>
+                <li>终端电脑</li>
+                称大丝--电脑一台+电子称一台（电子称：2000元)<br />
+                称小丝--电脑一台+电子天平一台（电子天平：2000元)<br />
+                生产统计--电脑一台
+            相关部门配置电脑
+            </ol>
+        </section>
+        <section id="implement">
+            <h4>三、功能实现</h4>
+            <ol>
+                <li>
+                    <p>数据录入自动化</p>
+                    <p>丝量数据（大丝）、纤度数据（小丝）分别通过电子称、电子天平与电脑联接数据自动录入</p>
+                </li>
+                <li>
+                    <p>数据统计规范化</p>
+                    <p>按照国家标准进行规范化数据统计</p>
+                </li>
+                <li>
+                    <p>数据查询灵活化</p>
+                    <p>
+                        可进行个人、车台、组别、车间、全厂数据统计查询;<br />
+                        可按日期、庄口、规格、茧别。。。查询
+                    </p>
+                </li>
+                <li>
+                    <p>数据处理科学化</p>
+                    <p>系统采用了先进的数理统计、逐步回归分析、质量控制图等现代化管理技术，使工艺设计、质量管理更科学化；并使用盈亏分析图可直观预测、计算庄口盈亏情况。</p>
+                </li>
+            </ol>
+        </section>
+        <section id="result">
+
+            <h4>四、应用效果</h4>
+            <ol>
+                <li>
+                    <p>缩短报表周期，增强报表的时效性</p>
+                    <p>使用本系统前，企业所有数据都以报表形式报至生产部，然后由生产部专人手工计算成绩，并汇总成生产报表，工作量大，容易出错，计算时间长。全厂生产成绩计算反馈滞后，对指导生产很不利，使用本系统后，有关部门可即时收到生产成绩,并可比原来提前1－2天计算、打印出来，使得信息反馈迅速、及时、准确，可靠地为企业的决策提供数据资料。</p>
+                </li>
+                <li>
+                    <p>减少人工处理工作量，减轻核算人员负担</p>
+                    <p>在应用本系统前，三个缫丝车间各有２名核算员，厂部有２人专门进行生产成绩计算统计，称大丝有一名专职记录员，应用本系统后，全厂只剩一名统计员，共减少人员7名，一年减少的人工工资即可购买所需电脑等硬件设备。</p>
+                </li>
+                <li>
+                    <p>降低出错率，提高生产成绩准确性</p>
+                    <p>使用本系统前，丝量及纤度数据由检验人员记在纸上，再由专人录入，这样容易出错，应用本系统后，将工作量最大的丝量及纤度数据录入交给计算机工作，在计算机和电子秤、电子天平之间相互直接传递数据。这样不仅减少人工处理工作量，减轻核算人员负担，而且降低出错率，提高了生产成绩准确性。</p>
+                </li>
+                <li>
+                    <p>资料查找方便</p>
+                    <p>企业多年来的生产数据都存于电脑中，实行资料无纸化，这样就使得资料查询更为方便。例如要查询某车间某庄口的生产成绩，只要鼠标一点即可得到，齐全的原始资料为企业的正确经营决策奠定了基础。</p>
+                </li>
+                <li>
+                    <p>工艺设计的准确率较高，预测等级﹑台产相对误差在3%以内的，缫折递增率绝对误差在3以内的达90%以上。</p>
+                </li>
+                <li>
+                    <p>庄口盈亏分析对原料采购及工艺设计提供了决策依据。</p>
+                </li>
+            </ol>
+        </section>
+        <section id="others">
+            <h4>五、其它相关系统</h4>
+            <ol>
+                <li>《工资管理系统》可利用已有数据结合企业考核办法计算</li>
+                <li>《双宫丝生产管理系统》是根据双宫丝生产的特殊工艺条件、要求和不同的质量检验标准，参照白厂丝的管理办法定制开发。</li>
+                <li>《蚕茧收烘管理系统》用电子秤分别称出蚕农出售的鲜茧重量和抽样的干壳量，即可确定蚕农的售茧量和等级，</li>
+                根据当地干壳量，即可确定蚕农的售茧量和等级，<br />
+                根据当地确定的鲜茧价格或人工定价，可自动打印付款发票。<br />
+                同时也可统计蚕农售茧进度总产量并对茧站考核等。
+            </ol>
+        </section>
+        <section id="price">
+
+            <h4>六、软件标价</h4>
+            <ol>
+                <li>缫丝企业白厂丝生产管理系统：壹万元；</li>
+                <li>选剥车间管理系统：贰千元； </li>
+                <li>复整车间管理系统：贰千元；</li>
+                <li>双宫丝生产管理系统：伍千元；</li>
+                <li>全厂工资管理系统：伍千元；</li>
+                <li>蚕茧收烘管理系统：壹万元（每增1茧站另加壹千元）。</li>
+            </ol>
+        </section>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+@*<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id est quis lorem porttitor posuere ac sit amet enim. Aliquam ut tellus sed mi gravida congue eget vel elit. Cras velit tellus, tincidunt congue iaculis vitae, adipiscing in neque. Nunc sit amet felis quis nulla ornare consectetur. Nulla auctor gravida justo, at vestibulum felis tempus quis. Nullam scelerisque suscipit tellus, egestas commodo metus lobortis tincidunt. Aliquam leo dolor, blandit vestibulum aliquet sed, placerat vitae mauris. Sed odio dolor, placerat vitae laoreet eget, suscipit in velit. Suspendisse mi augue, elementum quis scelerisque id, congue et elit. Phasellus a neque dolor, quis malesuada diam. Proin egestas, nisi sed pulvinar tincidunt, sem sapien faucibus elit, ut malesuada augue neque at leo. Praesent bibendum lectus at risus euismod vestibulum. Aenean turpis orci, hendrerit aliquam venenatis eget, laoreet non libero. Nulla quis nisi quis nulla vulputate sodales nec ut quam.</p>
         <p>Nullam eget nulla odio. Quisque vel turpis urna. Phasellus id tincidunt dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec magna tortor, sed sodales sapien. Aenean mollis metus et nisi varius vitae tincidunt lectus cursus. Phasellus semper magna a turpis sollicitudin placerat. Aliquam dui dolor, aliquam non elementum ut, viverra eget ante.</p>
         <p>Vestibulum ac nisi dolor. Curabitur mollis mattis nisl, vel tempor risus convallis eget. Quisque pulvinar, lacus quis facilisis ultricies, purus diam cursus libero, sed iaculis nisl libero ac enim. Nullam eget sem ullamcorper tellus dignissim mattis non eget elit. Cras neque ipsum, faucibus at viverra ac, ornare eget felis. Aliquam quis mi quam, non placerat urna. Cras nec pulvinar felis. Phasellus condimentum dapibus tellus, vel suscipit diam convallis molestie. Praesent ante erat, eleifend vitae molestie id, porta eu augue.</p>
         <p>Nunc in leo vitae risus tincidunt aliquam nec vitae nibh. Sed vulputate dictum sagittis. Sed ligula sem, laoreet ac sollicitudin quis, placerat eu leo. Sed ut dui eros, a tincidunt ligula. Ut dignissim metus ut dui tincidunt feugiat in consequat elit. Vivamus ac dui nisl, vel imperdiet odio. Aliquam nec gravida metus. Vestibulum faucibus nisi est. Duis interdum porttitor nulla ut dignissim. In fringilla erat fringilla lacus lacinia eu placerat eros fermentum. Praesent molestie vehicula lorem et imperdiet. Etiam vitae massa nisl, quis porttitor dui. Sed congue eros at turpis vulputate in consectetur tellus egestas. Nam pharetra, massa eu sollicitudin faucibus, arcu purus volutpat sem, non vestibulum nisl odio vitae est. Morbi non turpis ipsum, quis auctor lectus. Integer nec quam quis tortor ullamcorper pulvinar vel quis ipsum.</p>
@@ -127,12 +232,12 @@
             <dd>These men promptly escaped from.</dd>
             <dt>a maximum security stockade to the Los Angeles underground.</dt>
             <dd>Today, still wanted by the government, they survive as soldiers of fortune.</dd>
-        </dl>
+        </dl>*@
 
 
 
-        @*one column grid*@
-        <div class="row">
+@*one column grid*@
+@*    <div class="row">
             <div class="span10">inline elements like span, block level elements like p, div.</div>
         </div>
         <div class="row">
@@ -143,9 +248,7 @@
             <div class="span3">inline elements like span, block level elements like p, div.</div>
             <div class="span3">inline elements like span, block level elements like p, div.</div>
             <div class="span3">inline elements like span, block level elements like p, div.</div>
-        </div>
-    </div>
-
+        </div>*@
 
 
 

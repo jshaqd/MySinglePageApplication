@@ -1,9 +1,10 @@
-﻿﻿<!DOCTYPE html>
+﻿@using System.Configuration
+﻿<!DOCTYPE html>
 @*HTML5 doctype to support bootstrap HTML element and CSS properties*@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>@System.Configuration.ConfigurationManager.AppSettings["SiteName"]</title>
+    <title >芳草地软件编辑室</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @*Responsive design*@
     <link href="@Url.Content("~/css/bootstrap.css")" rel="stylesheet" type="text/css" />
@@ -23,7 +24,7 @@
         var page = url.Substring(url.LastIndexOf("/") + 1);
     }
 
-    <div class="navbar navbar-fixed-top">
+    @*    <div class="navbar navbar-inverse">
         <div class="navbar-inner">
             <div class="container">
                 <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -31,22 +32,66 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="brand" href="#">@System.Configuration.ConfigurationManager.AppSettings["SiteName"]</a>
+                <a class="brand" href="#">芳草地软件编辑</a>
                 <div class="nav-collapse">
                     <ul class="nav">
-                        <li class="@(page == "" ? "active" : "")"><a href="@Url.Action("Index", "Home")">Timesheets</a></li>
-                        <li class="@(page == "about" ? "active" : "")"><a href="@Url.Action("About", "Home")">About</a></li>
+                        <li class="@(page == "" ? "active" : "")"><a href="@Url.Action("Index", "Home")">首页</a></li>
+                        <li class="@(page == "product" ? "active" : "")"><a href="@Url.Action("About", "Home")">产品介绍</a></li>
+                        <li class="@(page == "about" ? "active" : "")"><a href="@Url.Action("About", "Home")">简介</a></li>
+                        <li class="@(page == "contactus" ? "active" : "")"><a href="@Url.Action("Index", "Home")">联系我们</a></li>
                     </ul>
                 </div>
             </div>
         </div>
+    </div>*@
+    
+        <!-- NAVBAR
+    ================================================== -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#"></a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                  <li class="@(page == "" ? "active" : "")"><a href="@Url.Action("Index", "Home")">首页</a></li>
+                  <li class="@(page == "about" ? "active" : "")"><a href="@Url.Action("About", "Home")">产品介绍</a></li>
+                  <li class="@(page == "contactus" ? "active" : "")"><a href="@Url.Action("Index", "Home")">联系我们</a></li>
+                <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">通讯录<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">成都聚会登记</a></li>
+                    <li><a href="#">张家港网友录</a></li>
+                    <li><a href="#">苏丝院同学录</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header">联系</li>
+                    <li><a href="#">留言簿</a></li>
+                    <li><a href="#">联系我们</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+
+    <div class="container" style="padding-top: 20px">
+        @RenderBody()
     </div>
 
     <div class="container">
-        @RenderBody()
-        <hr/>
-        <footer>
-            <p>© Company 2012</p>
+        <hr>
+        <footer style="text-align: center ">
+            <p>© 2013 芳草地软件编辑室/苏ICP备10094969号/联系我们</p>
         </footer>
     </div>
 
