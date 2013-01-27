@@ -14,8 +14,10 @@
 <div data-bind="foreach: viewModel.comments" style="padding-top: 40px">
     <div class="container" style="width: 100%">
         <hr data-bind="visible: viewModel.comments().length > 0" />
-        <span data-bind="text:name" style="word-wrap: break-word"></span> (<span data-bind="text:emailaddress"></span>):<br />
+        <span data-bind="text: name" style="word-wrap: break-word"></span> (<span data-bind="text:emailaddress"></span>):
+        <time data-bind="text: created"></time><br />
         <span data-bind="text:content" class="span12" style="word-wrap: break-word"></span>
+        
         <br />
 
     </div>
@@ -48,6 +50,7 @@
         this.emailaddress = ko.observable(comment.emailaddress);
         this.url = ko.observable(comment.url);
         this.content = ko.observable(comment.content);
+        this.created = ko.observable(comment.created);
 
         $('#comment-modal').on('hide', function () {
             var form = $('#Comment');
@@ -71,6 +74,7 @@
             form.find('#EmailAddress').val(comment.emailaddress());
             form.find('#URL').val(comment.url());
             form.find('#Content').val(comment.content());
+            form.find('#Created').val(comment.created());
         });
     }
 

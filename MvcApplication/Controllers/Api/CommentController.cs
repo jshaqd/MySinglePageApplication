@@ -27,7 +27,7 @@ namespace MvcApplication.Controllers.Api
         // GET /api/comments
         public HttpResponseMessage Get()
         {
-            var comments = _repository.FindAll().ToList();
+            var comments = _repository.FindAll().OrderByDescending(c=>c.Created).ToList();
             var response = Request.CreateResponse(HttpStatusCode.OK, comments);
             string uri = Url.Route(null, null);
             response.Headers.Location = new Uri(Request.RequestUri, uri);

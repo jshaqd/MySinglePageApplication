@@ -13,7 +13,13 @@ namespace MvcApplication.Models
     {
         public Comment()
         {
+            Created = DateTime.Now;
         }
+
+        [JsonProperty(PropertyName = "created")]
+        [Display(Name = "时间")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime Created { get; set; }
 
         [JsonProperty(PropertyName = "name")]
         [Display(Name = "姓名")]
