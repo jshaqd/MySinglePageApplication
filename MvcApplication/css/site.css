@@ -17,3 +17,6 @@ input.input-validation-error:focus {
     border-color: #FF0000;
     box-shadow: 0 0 10px #FF0000;
 }
+
+.span12 h1{color:#FE6E4C; font-weight: bold; padding: 5px;}  
+h3 {margin: 10px 0 10px 0;}  
