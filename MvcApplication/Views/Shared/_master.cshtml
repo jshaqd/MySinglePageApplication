@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>芳草地软件编辑</title>
+    <title>@System.Configuration.ConfigurationManager.AppSettings["SiteName"]</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @*Responsive design*@
     <link href="@Url.Content("~/css/bootstrap.css")" rel="stylesheet" type="text/css" />
@@ -31,7 +31,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="brand" href="#">Euricom</a>
+                <a class="brand" href="#">@System.Configuration.ConfigurationManager.AppSettings["SiteName"]</a>
                 <div class="nav-collapse">
                     <ul class="nav">
                         <li class="@(page == "" ? "active" : "")"><a href="@Url.Action("Index", "Home")">Timesheets</a></li>
