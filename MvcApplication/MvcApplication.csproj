@@ -117,11 +117,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Api\CommentController.cs" />
     <Compile Include="Controllers\Api\TimesheetsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\ObjectIdConverter.cs" />
     <Compile Include="Models\Timesheet.cs" />
@@ -172,6 +174,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\About.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Comment.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\_CommentEntry.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

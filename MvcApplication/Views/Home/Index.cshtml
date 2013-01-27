@@ -147,7 +147,7 @@
             form = $(form);
             if (!form.valid())
                 return;
-            var json = JSON.stringify(this._getTimesheetFromFrom(form));
+            var json = JSON.stringify(this._getTimesheetFromForm(form));
 
             var update = form.find("input[type='hidden'][id='id']").val();
             var httpVerb = !update ? "POST" : "PUT";
@@ -178,7 +178,7 @@
             form.validate().resetForm();
             form.get(0).reset();
         },
-        _getTimesheetFromFrom: function (form) {
+        _getTimesheetFromForm: function (form) {
             form = $(form);
             var timesheet = {};
             form.find('input[type!=submit],select').each(function () {

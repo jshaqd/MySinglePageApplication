@@ -1,0 +1,129 @@
+﻿@using MvcApplication.Models
+@{
+    ViewBag.Title = "Comment";
+    Layout = "~/Views/Shared/_master.cshtml";
+}
+
+<h2>留言</h2>
+
+<div class="pull-right">
+    <a id="new-comment" class="btn btn-success"
+        data-toggle="modal" href="#comment-modal">我要留言</a>
+</div>
+
+<div data-bind="foreach: viewModel.comments" style="padding-top: 40px">
+    <div class="container" style="width: 100%">
+        <hr data-bind="visible: viewModel.comments().length > 0" />
+        <span data-bind="text:name" style="word-wrap: break-word"></span> (<span data-bind="text:emailaddress"></span>):<br />
+        <span data-bind="text:content" class="span12" style="word-wrap: break-word"></span>
+        <br />
+
+    </div>
+</div>
+
+<div class="modal hide fade" id="comment-modal">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">x</button>
+        <h3>留言</h3>
+    </div>
+    <div class="alert">请在表格中输入您的留言，姓名与留言两项是必须的。</div>
+    <form id="Comment"
+        data-bind="submit:
+            function(form) {postComment(form, 'comment-modal')}">
+        <div class="modal-body">
+            @{ Html.RenderPartial("_CommentEntry", new Comment());}
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn" data-dismiss="modal">Cancel</a>
+            <input type="submit" class="btn btn-primary" value="Save" />
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    function comment(comment) {
+        this.id = ko.observable(comment.id);
+        this.name = ko.observable(comment.name);
+        this.address = ko.observable(comment.address);
+        this.emailaddress = ko.observable(comment.emailaddress);
+        this.url = ko.observable(comment.url);
+        this.content = ko.observable(comment.content);
+
+        $('#comment-modal').on('hide', function () {
+            var form = $('#Comment');
+            form.validate().resetForm();
+            form.get(0).reset();
+            form.removeData('comment');
+            form.find("input[type='hidden'][id='id']").remove();
+        });
+        $('#comment-modal').on('show', function () {
+            var form = $('#Comment');
+            var comment = form.data('comment');
+            if (!comment)
+                return;
+
+            $('<input>').attr('type', 'hidden')
+                        .attr('id', 'id')
+                        .attr('name', 'id')
+                        .val(comment.id()).prependTo(form);
+            form.find('#Name').val(comment.name());
+            form.find('#Address').val(comment.address());
+            form.find('#EmailAddress').val(comment.emailaddress());
+            form.find('#URL').val(comment.url());
+            form.find('#Content').val(comment.content());
+        });
+    }
+
+    $(function () {
+        ko.applyBindings(viewModel);
+        viewModel.loadComments();
+    });
+
+    var viewModel = {
+        comments: ko.observableArray([]),
+        loadComments: function () {
+            var self = this;
+            $.getJSON(
+                '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "Comment" })',
+                    function (comments) {
+                        self.comments.removeAll();
+                        $.each(comments, function (index, item) {
+                            self.comments.push(new comment(item));
+                        });
+                    }
+    );
+        },
+        postComment: function (form, modalId) {
+            form = $(form);
+            if (!form.valid())
+                return;
+            var json = JSON.stringify(this._getCommentFromForm(form));
+
+            var self = this;
+            $.ajax({
+                url: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "Comment" })',
+                type: "POST",
+                data: json,
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                success: function (jsonObject) {
+                    self.comments.push(new comment(jsonObject));
+                    $('#' + modalId).modal('hide');
+                }
+            });
+        },
+        resetForm: function (formId) {
+            var form = $('#' + formId);
+            form.validate().resetForm();
+            form.get(0).reset();
+        },
+        _getCommentFromForm: function (form) {
+            form = $(form);
+            var comment = {};
+            form.find('input[type!=submit],select').each(function () {
+                comment[this.name] = $(this).val();
+            });
+            return comment;
+        }
+    };
+</script>
