@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MongoDB.Bson, Version=1.6.0.4624, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -48,12 +51,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\dll\MongoDB.Driver.dll</HintPath>
     </Reference>
+    <Reference Include="Mvc.Mailer">
+      <HintPath>..\packages\MvcMailer.4.0\lib\40\Mvc.Mailer.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\dll\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -118,12 +125,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Api\CommentController.cs" />
+    <Compile Include="Controllers\Api\FriendsController.cs" />
+    <Compile Include="Controllers\Api\OrderController.cs" />
     <Compile Include="Controllers\Api\TimesheetsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mailers\IUserMailer.cs" />
+    <Compile Include="Mailers\UserMailer.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Friend.cs" />
+    <Compile Include="Models\OrderForm.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\ObjectIdConverter.cs" />
     <Compile Include="Models\Timesheet.cs" />
@@ -141,6 +154,12 @@
     <Content Include="css\example-fluid-layout.css" />
     <Content Include="css\site.css" />
     <Content Include="Global.asax" />
+    <Content Include="img\cet\001.JPG" />
+    <Content Include="img\cet\002.JPG" />
+    <Content Include="img\cet\003.JPG" />
+    <Content Include="img\cet\004.JPG" />
+    <Content Include="img\cet\fcd1.JPG" />
+    <Content Include="img\cet\fcd2.jpg" />
     <Content Include="img\fcd\zd.jpg" />
     <Content Include="img\fcd\zd1.jpg" />
     <Content Include="img\fcd\zd10.jpg" />
@@ -150,6 +169,66 @@
     <Content Include="img\fcd\zs77-01.JPG" />
     <Content Include="img\glyphicons-halflings-white.png" />
     <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="img\pict\000.jpg" />
+    <Content Include="img\pict\001.jpg" />
+    <Content Include="img\pict\002.jpg" />
+    <Content Include="img\pict\003.jpg" />
+    <Content Include="img\pict\004.jpg" />
+    <Content Include="img\pict\005.jpg" />
+    <Content Include="img\pict\101.jpg" />
+    <Content Include="img\pict\102.jpg" />
+    <Content Include="img\pict\103.jpg" />
+    <Content Include="img\pict\104.jpg" />
+    <Content Include="img\pict\105.jpg" />
+    <Content Include="img\pict\106.jpg" />
+    <Content Include="img\pict\107.jpg" />
+    <Content Include="img\pict\108.jpg" />
+    <Content Include="img\pict\109.jpg" />
+    <Content Include="img\pict\110.jpg" />
+    <Content Include="img\pict\111.jpg" />
+    <Content Include="img\pict\112.jpg" />
+    <Content Include="img\pict\113.jpg" />
+    <Content Include="img\pict\114.jpg" />
+    <Content Include="img\pict\201.jpg" />
+    <Content Include="img\pict\202.jpg" />
+    <Content Include="img\pict\203.jpg" />
+    <Content Include="img\pict\204.jpg" />
+    <Content Include="img\pict\205.jpg" />
+    <Content Include="img\pict\301.jpg" />
+    <Content Include="img\pict\302.jpg" />
+    <Content Include="img\pict\401.jpg" />
+    <Content Include="img\pict\402.jpg" />
+    <Content Include="img\pict\403.jpg" />
+    <Content Include="img\pict\404.jpg" />
+    <Content Include="img\pict\405.jpg" />
+    <Content Include="img\pict\406.jpg" />
+    <Content Include="img\pict\407.jpg" />
+    <Content Include="img\pict\408.jpg" />
+    <Content Include="img\pict\501.jpg" />
+    <Content Include="img\pict\502.jpg" />
+    <Content Include="img\pict\503.jpg" />
+    <Content Include="img\pict\504.jpg" />
+    <Content Include="img\pict\505.jpg" />
+    <Content Include="img\pict\506.jpg" />
+    <Content Include="img\pict\601.jpg" />
+    <Content Include="img\pict\602.jpg" />
+    <Content Include="img\pict\603.jpg" />
+    <Content Include="img\pict\701.jpg" />
+    <Content Include="img\pict\702.jpg" />
+    <Content Include="img\pict\703.jpg" />
+    <Content Include="img\pict\704.jpg" />
+    <Content Include="img\pict\705.jpg" />
+    <Content Include="img\pict\706.jpg" />
+    <Content Include="img\pict\707.jpg" />
+    <Content Include="img\pict\708.jpg" />
+    <Content Include="img\pict\709.jpg" />
+    <Content Include="img\pict\710.jpg" />
+    <Content Include="img\pict\711.jpg" />
+    <Content Include="img\pict\712.jpg" />
+    <Content Include="img\pict\713.jpg" />
+    <Content Include="img\pict\714.jpg" />
+    <Content Include="img\pict\715.jpg" />
+    <Content Include="img\pict\fcd.jpg" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-1.8.2.min.js" />
@@ -190,6 +269,36 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Alumnus.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\ContactUs.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Order.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\_OrderForm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Order\Send.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserMailer\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserMailer\Welcome.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserMailer\GoodBye.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="temp_email\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Friends.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\_Friend.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

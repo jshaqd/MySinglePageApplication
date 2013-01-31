@@ -76,22 +76,22 @@
               <ul class="nav">
                   <li class="@(page == "" ? "active" : "")"><a href="@Url.Action("Index", "Home")">首页</a></li>
                   <li class="@(page == "about" ? "active" : "")"><a href="@Url.Action("About", "Home")">产品介绍</a></li>
-                  <li class="@(page == "about" ? "active" : "")"><a href="@Url.Action("About", "Home")">在线订单</a></li>
+                  <li class="@(page == "order" ? "active" : "")"><a href="@Url.Action("Order", "Home")">在线订单</a></li>
                   @*<li class="@(page == "contactus" ? "active" : "")"><a href="@Url.Action("Index", "Home")">联系我们</a></li>*@
                 <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
                   <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">通讯录<b class="caret"></b></a>
                       <ul class="dropdown-menu">
                           <li><a href="#">成都聚会登记</a></li>
-                          <li><a href="#">张家港网友录</a></li>
+                          <li><a href="@Url.Action("Friends", "Home")">张家港网友录</a></li>
                           <li><a href="@Url.Action("Alumnus", "Home")">苏丝院同学录</a></li>
                           <li class="divider"></li>
                           <li class="nav-header">联系</li>
                           <li><a href="@Url.Action("Comment", "Home")">留言簿</a></li>
-                          <li><a href="#">联系我们</a></li>
+                          <li><a href="@Url.Action("ContactUs", "Home")">联系我们</a></li>
                       </ul>
                   </li>
-                   <li class="@(page == "contactus" ? "active" : "")"><a href="@Url.Action("Index", "Home")">联系我们</a></li>
+                   <li class="@(page == "contactus" ? "active" : "")"><a href="@Url.Action("ContactUs", "Home")">联系我们</a></li>
               </ul>
             </div><!--/.nav-collapse -->
           </div><!-- /.navbar-inner -->
@@ -106,7 +106,7 @@
     <div class="container">
         <hr>
         <footer style="text-align: center ">
-            <p>© 2013 芳草地软件编辑室/苏ICP备10094969号/联系我们</p>
+            <p>Copyright © 2013 版权所有 芳草地软件编辑室/苏ICP备10094969号/联系我们</p>
         </footer>
     </div>
 

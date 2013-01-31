@@ -39,5 +39,20 @@ namespace MvcApplication.Controllers
         {
             return View();
         }
+
+        public ActionResult ContactUs()
+        {
+            return View();
+        }
+
+        public ActionResult Order()
+        {
+            return View();
+        }
+
+        public ActionResult Friends()
+        {
+            return View();
+        }
     }
 }

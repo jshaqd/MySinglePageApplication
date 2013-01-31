@@ -1,0 +1,22 @@
+﻿@model MvcApplication.Models.OrderForm
+
+<h3>请在表格中输入您的订单，* 是必须的。</h3>
+<span class="span1">@Html.LabelFor(m => m.CompanyName)</span><span class="span10">@Html.TextBoxFor(m => m.CompanyName)</span>
+
+<span class="span1">@Html.LabelFor(m => m.Address)</span><span class="span10">@Html.TextBoxFor(m => m.Address)</span>
+<span class="span1">@Html.LabelFor(m => m.PhoneNumber)</span><span class="span10">@Html.TextBoxFor(m => m.PhoneNumber)</span>
+<span class="span1">@Html.LabelFor(m => m.FaxNumber)</span><span class="span10">@Html.TextBoxFor(m => m.FaxNumber)</span>
+<span class="span1">@Html.LabelFor(m => m.ContactName)</span><span class="span10">@Html.TextBoxFor(m => m.ContactName)</span>
+<span class="span1">@Html.LabelFor(m => m.Email)</span><span class="span10">@Html.TextBoxFor(m => m.Email)</span>
+<span class="span1">@Html.LabelFor(m => m.OrderDetail)</span><span class="span10">@Html.TextAreaFor(m => m.OrderDetail)</span>
+
+<% using (Html.BeginForm("Send"，"Order", FormMethod.Post))
+   { %>
+
+   <%: Html.LabelFor(m => m.user_email_address) %>
+   <%: Html.TextBox("user_email_address")%>
+   <%: Html.ValidationSummary(true) %>
+
+<input type="submit" value="Submit" />
+
+<%} %>
