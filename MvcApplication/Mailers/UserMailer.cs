@@ -23,6 +23,7 @@ namespace MvcApplication.Mailers
 
             var mailMessage = new MvcMailMessage { Subject = "在线订单" };
             mailMessage.To.Add("angela.qiandan@gmail.com");
+            mailMessage.To.Add("jsfcd@qq.com");
 		    ViewBag.OrderForm = this.OrderForm;
             PopulateBody(mailMessage, viewName: "Welcome");
             return mailMessage;
