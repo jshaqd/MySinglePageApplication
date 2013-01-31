@@ -155,10 +155,10 @@
     <Content Include="css\example-fluid-layout.css" />
     <Content Include="css\site.css" />
     <Content Include="Global.asax" />
-    <Content Include="img\cet\001.JPG" />
-    <Content Include="img\cet\002.JPG" />
-    <Content Include="img\cet\003.JPG" />
-    <Content Include="img\cet\004.JPG" />
+    <Content Include="img\cet\001_1.jpg" />
+    <Content Include="img\cet\002_1.jpg" />
+    <Content Include="img\cet\003_1.jpg" />
+    <Content Include="img\cet\004_1.jpg" />
     <Content Include="img\cet\fcd1.JPG" />
     <Content Include="img\cet\fcd2.jpg" />
     <Content Include="img\fcd\zd.jpg" />
